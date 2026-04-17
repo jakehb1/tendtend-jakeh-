@@ -1,6 +1,7 @@
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Problem from './components/Problem';
+import OntologyDiagram from './components/OntologyDiagram';
 import ActivityFeed from './components/ActivityFeed';
 import Trust from './components/Trust';
 import Features from './components/Features';
@@ -16,6 +17,7 @@ export default function App() {
       <main>
         <Hero />
         <Problem />
+        <OntologyDiagram />
         <ActivityFeed />
         <Trust />
         <Features />
