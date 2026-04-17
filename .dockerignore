@@ -1,4 +1,5 @@
 *
-!landing-page/index.html
-!landing-page/og-image.png
-!landing-page/nginx.conf
+!landing-page
+landing-page/node_modules
+landing-page/dist
+landing-page/.vite
