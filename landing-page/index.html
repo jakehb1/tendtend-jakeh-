@@ -36,15 +36,15 @@ fbq('track', 'PageView');
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tend — The ontology layer AI agents need to run your business</title>
-<meta name="description" content="We solidify your data layer so AI agents can reliably run complex jobs across your real tools. Not a chatbot. A structured foundation agents can actually interact with.">
+<title>Tend — We make your operational data legible to AI agents</title>
+<meta name="description" content="Every business runs on an implicit ontology. We make it legible — so AI agents can reliably run complex jobs across your real tools. Not a chatbot. A structured foundation agents can act on.">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='15' width='80' height='14' fill='black'/><rect x='10' y='38' width='80' height='14' fill='black'/><rect x='38' y='62' width='24' height='24' fill='black'/></svg>">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tend.team">
-<meta property="og:title" content="Tend — The ontology layer AI agents need to run your business">
-<meta property="og:description" content="We solidify your data layer so AI agents can reliably run complex jobs across your real tools.">
+<meta property="og:title" content="Tend — We make your operational data legible to AI agents">
+<meta property="og:description" content="We build the ontology layer that makes your business legible to AI agents — so they can reliably run jobs on top of your real tools.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,7 +81,11 @@ body {
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
 }
+
+img, svg { max-width: 100%; height: auto; }
 
 /* === TYPOGRAPHY === */
 h1, h2 {
@@ -1246,38 +1250,66 @@ footer {
 
 @media (max-width: 600px) {
   .container { padding: 48px 16px; }
+  nav { padding: 14px 16px; }
   .hero { padding-top: 100px; min-height: auto; padding-bottom: 32px; }
   .hero-content { max-width: 100%; }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  .hero-content > p { font-size: 1.05rem; }
-  .hero-ctas { flex-direction: column; }
+  h1 { font-size: 2rem; word-break: break-word; hyphens: auto; }
+  h2 { font-size: 1.5rem; word-break: break-word; }
+  .hero-content > p { font-size: 1.05rem; margin-bottom: 32px; }
+  .hero-ctas { flex-direction: column; margin-top: 32px; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
   .trust-section { padding: 28px 20px; }
   .trust-stats { gap: 24px; }
   .trust-quote blockquote { font-size: 1rem; }
+  .trust-logos { gap: 20px; }
+  .trust-logos svg, .trust-logos img { height: 28px; }
   .problem-section { padding: 40px 20px; }
   .problem-section > p { font-size: 1rem; }
   .hero-illustration { padding: 0 0 40px; max-width: 100%; }
+  .process-section { padding: 56px 20px; margin: 48px 0; border-radius: 12px; }
   .process-grid { grid-template-columns: 1fr; }
   .step:first-child { grid-row: auto; }
-  .timeline-labels { padding: 0; font-size: 9px; }
-  .timeline-label { font-size: 9px; }
+  .timeline-labels { display: none; }
+  .process-timeline { padding: 16px 0; }
   .step { padding: 24px 16px; }
   .features-grid { grid-template-columns: 1fr; }
   .feature-card { padding: 24px 20px; min-height: auto; }
   .feature-card:first-child { min-height: auto; grid-row: auto; }
   .feature-card p { font-size: 0.9rem; }
-  .price-card { padding: 32px 24px; }
+  .faq-question { font-size: 15px; padding: 20px 0; }
+  .faq-answer p { font-size: 14px; }
   .final-cta { padding: 48px 16px 0; }
   .cta-cards { grid-template-columns: 1fr; }
-  .cta-card { min-height: 260px; }
+  .cta-card { min-height: 260px; padding: 28px 24px; }
+  .cta-card-header h3 { font-size: 1.25rem; }
+  .cta-bar { padding: 18px 22px; margin: 12px 16px 0; border-radius: 12px; }
+  .cta-bar-text { font-size: 12px; }
   footer { padding: 40px 16px 32px; }
   .footer-logo { letter-spacing: 0.06em; font-size: clamp(4rem, 22vw, 12rem); }
   .footer-locations { margin-top: 32px; }
-  .activity-feed { padding: 16px; font-size: 12px; }
+  .activity-feed { padding: 16px; font-size: 11px; overflow-x: auto; }
   .activity-line { gap: 10px; }
+  .activity-time { min-width: 56px; }
+  .section-header { margin-bottom: 32px; }
   .section-header p { font-size: 0.95rem; }
+  .nav-badge { display: none; }
+  .mobile-menu { left: 8px; right: 8px; }
+}
+
+@media (max-width: 380px) {
+  .container { padding: 40px 14px; }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+  .hero-content > p { font-size: 1rem; }
+  .btn-primary { padding: 14px 24px; font-size: 12px; letter-spacing: 0.06em; }
+  .logo-text { font-size: 16px; }
+  .logo-icon { width: 24px; height: 24px; }
+  .activity-feed { padding: 14px; font-size: 10px; }
+  .activity-time { min-width: 52px; }
+  .feature-card { padding: 22px 18px; }
+  .step { padding: 22px 14px; }
+  .trust-logos { gap: 16px; }
+  .trust-logos svg, .trust-logos img { height: 24px; }
 }
 
 /* Reduce motion for accessibility */
@@ -1343,8 +1375,8 @@ footer {
 <!-- HERO -->
 <section class="container hero">
   <div class="hero-content">
-    <h1>The ontology layer your agents need to run the&nbsp;business.</h1>
-    <p>We solidify the data layer your tools, teams, and workflows actually live in — so AI agents can reliably run complex jobs on top of it. Not a chatbot. A foundation agents can interact with.</p>
+    <h1>We make your operational data legible to AI&nbsp;agents.</h1>
+    <p>Every business runs on an implicit ontology — the objects, the actions, the rules. We make it explicit, so agents can reliably run complex jobs across your real tools. Not a chatbot. A structured foundation agents can act on.</p>
     <div class="hero-ctas">
       <a href="https://cal.com/clawdbotdfw/15min" class="btn-primary"><span class="dot"></span> Book Discovery Call</a>
     </div>
@@ -1422,8 +1454,8 @@ footer {
 <!-- PROBLEM -->
 <section class="container reveal" style="padding-top: 40px;">
   <div class="problem-section">
-    <h2>Agents don't fail because the models are weak. They fail because the data layer underneath them isn't real.</h2>
-    <p>Scattered tools, unstructured records, no shared model of your customers, jobs, or systems. That's why most AI deployments stall. We build the ontology — the entities, relationships, and access paths that turn your business into one coherent layer agents can actually operate on.</p>
+    <h2>Agents don't fail because the models are weak. They fail because your data isn't legible to them.</h2>
+    <p>Scattered tools, unstructured records, institutional knowledge trapped in people's heads. That's why most AI deployments stall. We build the ontology — the objects, relationships, and rules that make your business one coherent layer agents can reason over and act on.</p>
   </div>
 </section>
 
@@ -1474,35 +1506,35 @@ footer {
 <section class="container" id="features">
   <div class="section-header reveal">
     <div class="section-label">What We Do</div>
-    <h2>A real data layer. Agents that actually run.</h2>
-    <p>Not a chatbot shop. Not an enterprise consulting firm. We build the ontology your agents need, and run the complex jobs on top of it.</p>
+    <h2>A legible data layer. Agents that actually run.</h2>
+    <p>Not a chatbot shop. Not an enterprise consulting firm. We build the ontology, forward-deploy the operator, and run the complex jobs on top of it.</p>
   </div>
 
   <div class="features-grid stagger-children">
     <div class="feature-card">
       <span class="feature-tag">A</span>
       <h3>Ontology first, automation second</h3>
-      <p>We map your entities, relationships, and workflows into one structured model. The foundation agents need to reason, route, and act correctly.</p>
+      <p>We map your objects, relationships, and rules into one structured model. The foundation agents need to reason, route, and act correctly on your business.</p>
     </div>
     <div class="feature-card">
       <span class="feature-tag">B</span>
-      <h3>Bound to your actual tools</h3>
-      <p>Email, calendar, CRM, Slack, databases — wired into the ontology with scoped, permissioned access. Agents read and write against real systems.</p>
-    </div>
-    <div class="feature-card">
-      <span class="feature-tag">D</span>
-      <h3>Agents that run complex jobs</h3>
-      <p>Multi-step work, handoffs, exceptions. Agents operate against the data layer with defined behavior and escalation logic, not just single prompts.</p>
+      <h3>Wired into your actual tools</h3>
+      <p>Email, calendar, CRM, Slack, databases — bound to the ontology with scoped, permissioned access. Agents read from and write back to your systems of record.</p>
     </div>
     <div class="feature-card">
       <span class="feature-tag">C</span>
+      <h3>Forward-deployed operators</h3>
+      <p>We embed agents inside your workflow and tune them in production. Multi-step jobs, handoffs, exceptions — with defined behavior and escalation logic.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-tag">D</span>
       <h3>Human oversight built in</h3>
-      <p>Any agent action with real business consequence stays gated behind your approval until the behavior is trusted in production.</p>
+      <p>Any agent action with real business consequence stays gated behind your approval until the behavior is trusted. Every action logged and auditable.</p>
     </div>
     <div class="feature-card">
       <span class="feature-tag">E</span>
       <h3>Maintained as you evolve</h3>
-      <p>As your tools, schemas, and processes change, we keep the ontology and the agents calibrated. The layer doesn't drift.</p>
+      <p>As your tools, schemas, and processes change, we keep the ontology and the operators calibrated. The layer doesn't drift.</p>
     </div>
   </div>
 </section>
@@ -1546,22 +1578,22 @@ footer {
     <div class="step">
       <div class="step-num">02</div>
       <h3>Scope</h3>
-      <p>We define the ontology, the agent behavior, and the escalation paths before any build work starts. What it decides, what it escalates, what needs your sign-off.</p>
+      <p>We model the ontology — objects, actions, rules — and define the operator behavior and escalation paths. What it decides, what it escalates, what needs your sign-off.</p>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <h3>Build</h3>
-      <p>One to two weeks. We structure the data layer, wire in your tools, and deploy the agents against real systems with scoped permissions.</p>
+      <p>One to two weeks. We structure the data layer, wire in your tools, and forward-deploy the operator against real systems with scoped permissions.</p>
     </div>
     <div class="step">
       <div class="step-num">04</div>
       <h3>Run</h3>
-      <p>Continuous monitoring of the agents and the ontology. Performance reviews, exception handling, drift correction. We handle it — not you.</p>
+      <p>Continuous monitoring of the operator and the ontology. Performance reviews, exception handling, drift correction. We run it — not you.</p>
     </div>
     <div class="step">
       <div class="step-num">05</div>
       <h3>Expand</h3>
-      <p>Once the first jobs run reliably, we extend the ontology and add the next agents. Each addition builds on a proven foundation.</p>
+      <p>Once the first jobs run reliably, we extend the ontology and deploy the next agents. Each addition compounds on a proven foundation.</p>
     </div>
   </div>
 </section>
@@ -1592,7 +1624,7 @@ footer {
         <span class="faq-icon">+</span>
       </button>
       <div class="faq-answer">
-        <p>Claude and GPT are interfaces you prompt manually. What we build is the data layer those models need to be useful inside a real business. A structured ontology of your tools, entities, and workflows — with agents running continuously on top of it. You don't use it like a chat window. It runs as part of your business.</p>
+        <p>Claude and GPT are models you prompt manually. What we build is the ontology those models need to be useful inside a real business — the structured layer of your objects, tools, and rules that makes your operation legible to an agent. You don't use it like a chat window. It runs as part of your business.</p>
       </div>
     </div>
 
@@ -1664,7 +1696,7 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">tend</div>
-  <div class="footer-tagline">The ontology layer for AI agents.</div>
+  <div class="footer-tagline">We make your operational data legible to AI agents.</div>
   <div class="footer-links">
     © 2026 Tend · <a href="mailto:hello@tend.team">hello@tend.team</a>
   </div>
