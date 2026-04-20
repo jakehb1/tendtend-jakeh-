@@ -34,8 +34,7 @@ export default function Hero() {
             animate="shown"
             custom={1}
           >
-            We install an operator into your business. In 30 days, it knows your
-            workflows better than your first hire ever will.
+            The brain that powers autonomous businesses.
           </motion.h1>
 
           <motion.p
