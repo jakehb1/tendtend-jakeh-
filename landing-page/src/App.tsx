@@ -1,11 +1,10 @@
 import Nav from './components/Nav';
 import Hero from './components/Hero';
-import Problem from './components/Problem';
+import StackDiagram from './components/StackDiagram';
 import OntologyDiagram from './components/OntologyDiagram';
 import ActivityFeed from './components/ActivityFeed';
 import Trust from './components/Trust';
 import Layers from './components/Layers';
-import StackDiagram from './components/StackDiagram';
 import Process from './components/Process';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
@@ -17,12 +16,11 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Problem />
+        <StackDiagram />
         <OntologyDiagram />
         <ActivityFeed />
         <Trust />
         <Layers />
-        <StackDiagram />
         <Process />
         <FAQ />
         <FinalCTA />

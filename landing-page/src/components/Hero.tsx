@@ -34,7 +34,7 @@ export default function Hero() {
             animate="shown"
             custom={1}
           >
-            The brain that powers autonomous businesses.
+            The operating system for your business.
           </motion.h1>
 
           <motion.p
@@ -44,10 +44,8 @@ export default function Hero() {
             animate="shown"
             custom={2}
           >
-            You're losing leads, dropping follow-ups, and spending hours on work
-            that shouldn't require you. We fix that. We connect to your tools,
-            learn how your business actually works, and run the repetitive
-            parts. You just deal with what needs a human.
+            Data is a spreadsheet. An ontology is a brain. We build the brain —
+            then the agents that reason across it.
           </motion.p>
 
           <motion.div

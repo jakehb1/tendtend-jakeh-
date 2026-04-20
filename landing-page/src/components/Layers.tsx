@@ -23,26 +23,16 @@ export default function Layers() {
   return (
     <section className={styles.section} id="how">
       <div className={styles.inner}>
-        <motion.h2
-          className={styles.h}
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          className={styles.label}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
+          transition={{ duration: 0.5 }}
+          style={{ marginBottom: 28 }}
         >
-          The operating system for your business.
-        </motion.h2>
-
-        <motion.p
-          className={styles.sub}
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ delay: 0.1, duration: 0.6 }}
-        >
-          Data is a spreadsheet. An ontology is a brain. We build the brain —
-          then the agents that reason across it.
-        </motion.p>
+          The three layers
+        </motion.div>
 
         <div className={styles.grid}>
           {LAYERS.map((l, i) => (

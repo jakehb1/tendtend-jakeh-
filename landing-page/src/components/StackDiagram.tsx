@@ -63,24 +63,85 @@ export default function StackDiagram() {
           </div>
 
           <div className={styles.connectors}>
-            <div className={styles.connectorCol}>
-              <motion.div
-                className={styles.tick}
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
+            <svg
+              className={styles.connectorSvg}
+              viewBox="0 0 200 60"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <defs>
+                <path id="sd-reads" d="M50,0 L50,60" />
+                <path id="sd-acts-down" d="M150,0 L150,60" />
+                <path id="sd-acts-up" d="M150,60 L150,0" />
+              </defs>
+              <motion.line
+                x1="50"
+                y1="0"
+                x2="50"
+                y2="60"
+                stroke="rgba(255,255,255,0.22)"
+                strokeWidth="1"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
                 viewport={{ once: true, margin: '-60px' }}
-                transition={{ delay: 0.45, duration: 0.4 }}
+                transition={{ delay: 0.45, duration: 0.5 }}
               />
+              <motion.line
+                x1="150"
+                y1="0"
+                x2="150"
+                y2="60"
+                stroke="rgba(255,255,255,0.22)"
+                strokeWidth="1"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ delay: 0.55, duration: 0.5 }}
+              />
+              <circle r="1.8" fill="#B8C26B">
+                <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.2s">
+                  <mpath href="#sd-reads" />
+                </animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.88;1"
+                  dur="2.4s"
+                  repeatCount="indefinite"
+                  begin="1.2s"
+                />
+              </circle>
+              <circle r="1.8" fill="#B8C26B">
+                <animateMotion dur="2.2s" repeatCount="indefinite" begin="1.6s">
+                  <mpath href="#sd-acts-down" />
+                </animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.88;1"
+                  dur="2.2s"
+                  repeatCount="indefinite"
+                  begin="1.6s"
+                />
+              </circle>
+              <circle r="1.8" fill="#B8C26B">
+                <animateMotion dur="2.2s" repeatCount="indefinite" begin="2.7s">
+                  <mpath href="#sd-acts-up" />
+                </animateMotion>
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.12;0.88;1"
+                  dur="2.2s"
+                  repeatCount="indefinite"
+                  begin="2.7s"
+                />
+              </circle>
+            </svg>
+            <div className={styles.connectorCol}>
               <div className={styles.connectorLabel}>Reads</div>
             </div>
             <div className={styles.connectorCol}>
-              <motion.div
-                className={styles.tick}
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ delay: 0.55, duration: 0.4 }}
-              />
               <div className={styles.connectorLabel}>Reads + Acts</div>
             </div>
           </div>
@@ -106,7 +167,18 @@ export default function StackDiagram() {
                     viewport={{ once: true, margin: '-40px' }}
                     transition={{ delay: 0.8 + i * 0.05, duration: 0.35 }}
                   >
-                    {e}
+                    <motion.span
+                      className={styles.pillHighlight}
+                      animate={{ opacity: [0, 0.9, 0] }}
+                      transition={{
+                        duration: 2.2,
+                        repeat: Infinity,
+                        ease: 'easeInOut',
+                        delay: 2.2 + i * 0.8,
+                        repeatDelay: ENTITIES.length * 0.8 - 2.2,
+                      }}
+                    />
+                    <span>{e}</span>
                   </motion.span>
                 ))}
               </div>
@@ -117,18 +189,30 @@ export default function StackDiagram() {
                 preserveAspectRatio="none"
                 aria-hidden="true"
               >
+                <defs>
+                  {EDGES.map(([a, b], i) => {
+                    const x1 = 50 + a * 100;
+                    const x2 = 50 + b * 100;
+                    return (
+                      <path
+                        key={`def-${i}`}
+                        id={`sd-edge-${i}`}
+                        d={`M${x1},10 L${x2},100`}
+                      />
+                    );
+                  })}
+                </defs>
+
                 {EDGES.map(([a, b], i) => {
                   const x1 = 50 + a * 100;
                   const x2 = 50 + b * 100;
-                  const y1 = 10;
-                  const y2 = 100;
                   return (
                     <motion.line
                       key={`${a}-${b}`}
                       x1={x1}
-                      y1={y1}
+                      y1={10}
                       x2={x2}
-                      y2={y2}
+                      y2={100}
                       stroke="rgba(255, 255, 255, 0.14)"
                       strokeWidth={1}
                       initial={{ pathLength: 0, opacity: 0 }}
@@ -142,6 +226,26 @@ export default function StackDiagram() {
                     />
                   );
                 })}
+
+                {[0, 2, 4].map((i) => (
+                  <circle key={`dot-${i}`} r="2.4" fill="#B8C26B">
+                    <animateMotion
+                      dur={`${3 + (i % 3) * 0.5}s`}
+                      repeatCount="indefinite"
+                      begin={`${2.6 + i * 0.7}s`}
+                    >
+                      <mpath href={`#sd-edge-${i}`} />
+                    </animateMotion>
+                    <animate
+                      attributeName="opacity"
+                      values="0;1;1;0"
+                      keyTimes="0;0.1;0.9;1"
+                      dur={`${3 + (i % 3) * 0.5}s`}
+                      repeatCount="indefinite"
+                      begin={`${2.6 + i * 0.7}s`}
+                    />
+                  </circle>
+                ))}
               </svg>
             </div>
 

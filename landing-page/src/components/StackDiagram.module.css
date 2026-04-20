@@ -62,25 +62,31 @@
 }
 
 .connectors {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
   padding: 24px 0 18px;
-  align-items: center;
+  align-items: end;
+  min-height: 76px;
+}
+
+.connectorSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
 }
 
 .connectorCol {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-}
-
-.tick {
-  width: 1px;
-  height: 28px;
-  background: rgba(255, 255, 255, 0.22);
-  transform-origin: top;
+  padding-top: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .connectorLabel {
@@ -116,6 +122,7 @@
 }
 
 .pill {
+  position: relative;
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.02em;
@@ -124,6 +131,22 @@
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.015);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.pill > span {
+  position: relative;
+  z-index: 2;
+}
+
+.pillHighlight {
+  position: absolute;
+  inset: 0;
+  background: rgba(184, 194, 107, 0.18);
+  border-left: 2px solid var(--accent-slate);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .edges {
