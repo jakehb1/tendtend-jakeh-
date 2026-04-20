@@ -154,7 +154,7 @@ a { color: var(--fg); text-decoration: none; }
   transform: translateX(3px);
 }
 
-::selection { background: rgba(184, 194, 107, 0.35); color: #fff; }
+::selection { background: var(--accent-slate); color: #0B0B0A; }
 
 @media (prefers-reduced-motion: reduce) {
   * {
