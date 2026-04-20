@@ -4,7 +4,7 @@ import Problem from './components/Problem';
 import OntologyDiagram from './components/OntologyDiagram';
 import ActivityFeed from './components/ActivityFeed';
 import Trust from './components/Trust';
-import Features from './components/Features';
+import Layers from './components/Layers';
 import Process from './components/Process';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
@@ -20,7 +20,7 @@ export default function App() {
         <OntologyDiagram />
         <ActivityFeed />
         <Trust />
-        <Features />
+        <Layers />
         <Process />
         <FAQ />
         <FinalCTA />
