@@ -95,12 +95,10 @@ export default function Constellation() {
           const a = nodeMap[from];
           const b = nodeMap[to];
           return (
-            <motion.line
+            <motion.path
               key={`${from}-${to}`}
-              x1={a.x}
-              y1={a.y}
-              x2={b.x}
-              y2={b.y}
+              d={`M${a.x},${a.y} L${b.x},${b.y}`}
+              fill="none"
               stroke="rgba(255, 255, 255, 0.22)"
               strokeWidth="1"
               strokeLinecap="round"
@@ -114,6 +112,46 @@ export default function Constellation() {
             />
           );
         })}
+
+        <defs>
+          <path
+            id="trail-1"
+            d="M155,125 L205,155 L245,195 L290,165 L370,155 L410,210"
+          />
+          <path
+            id="trail-2"
+            d="M290,165 L320,245 L260,270 L180,290 L225,390"
+          />
+          <path
+            id="trail-3"
+            d="M260,270 L355,310 L440,290 L355,310 L300,370 L380,400"
+          />
+        </defs>
+
+        {[
+          { id: 'trail-1', dur: 5.4, begin: 1.6 },
+          { id: 'trail-2', dur: 4.8, begin: 2.4 },
+          { id: 'trail-3', dur: 6.2, begin: 1.9 },
+        ].map((t) => (
+          <circle key={t.id} r={3.2} fill="#B8C26B">
+            <animateMotion
+              dur={`${t.dur}s`}
+              repeatCount="indefinite"
+              begin={`${t.begin}s`}
+              rotate="auto"
+            >
+              <mpath href={`#${t.id}`} />
+            </animateMotion>
+            <animate
+              attributeName="opacity"
+              values="0;1;1;0"
+              keyTimes="0;0.08;0.9;1"
+              dur={`${t.dur}s`}
+              repeatCount="indefinite"
+              begin={`${t.begin}s`}
+            />
+          </circle>
+        ))}
 
         {NODES.map((n, i) => (
           <g key={n.id}>
