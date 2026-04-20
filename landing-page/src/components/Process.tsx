@@ -44,7 +44,7 @@ export default function Process() {
             How we deploy
           </div>
           <h2 style={{ color: 'var(--signal-white)' }}>
-            Five steps. Thirty days. One operator in production.
+            Five steps. One operator in production.
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.62)' }}>
             We don't sell software. We install an operational layer, run the

@@ -17,7 +17,7 @@ const ITEMS = [
   },
   {
     q: 'How long until something is running?',
-    a: 'Usually 30 days from kickoff to first agent in production. The ontology and first workflow go in together. From there we expand surface area.',
+    a: 'Depends on the shape of your data and the first workflow we pick. The ontology and first workflow go in together. From there we expand surface area.',
   },
   {
     q: 'Do agents take irreversible actions on their own?',

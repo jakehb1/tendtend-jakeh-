@@ -10,27 +10,6 @@ const ENTITIES = [
   'Vendors',
 ];
 
-const EDGES: { from: number; to: number; depth: number }[] = [
-  { from: 0, to: 1, depth: 30 },
-  { from: 2, to: 3, depth: 30 },
-  { from: 4, to: 5, depth: 30 },
-  { from: 1, to: 3, depth: 60 },
-  { from: 3, to: 5, depth: 60 },
-  { from: 0, to: 2, depth: 90 },
-  { from: 2, to: 4, depth: 90 },
-  { from: 0, to: 5, depth: 150 },
-];
-
-const edgePath = (
-  e: { from: number; to: number; depth: number },
-  spacing: number,
-  offset: number,
-) => {
-  const x1 = offset + e.from * spacing;
-  const x2 = offset + e.to * spacing;
-  const mid = (x1 + x2) / 2;
-  return `M${x1},0 Q${mid},${e.depth} ${x2},0`;
-};
 
 export default function StackDiagram() {
   return (
@@ -196,66 +175,6 @@ export default function StackDiagram() {
                 ))}
               </div>
 
-              <svg
-                className={styles.edges}
-                viewBox="0 0 600 180"
-                preserveAspectRatio="xMidYMid meet"
-                aria-hidden="true"
-              >
-                <defs>
-                  {EDGES.map((e, i) => (
-                    <path
-                      key={`def-${i}`}
-                      id={`sd-edge-${i}`}
-                      d={edgePath(e, 100, 50)}
-                    />
-                  ))}
-                </defs>
-
-                {EDGES.map((e, i) => (
-                  <motion.path
-                    key={`edge-${i}`}
-                    d={edgePath(e, 100, 50)}
-                    fill="none"
-                    stroke="rgba(255, 255, 255, 0.16)"
-                    strokeWidth={1}
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    whileInView={{ pathLength: 1, opacity: 1 }}
-                    viewport={{ once: true, margin: '-40px' }}
-                    transition={{
-                      delay: 1.0 + i * 0.08,
-                      duration: 0.8,
-                      ease: 'easeOut',
-                    }}
-                  />
-                ))}
-
-                {EDGES.map((_, i) => {
-                  if (i % 2 !== 0) return null;
-                  const dur = 3.6 + (i % 3) * 0.5;
-                  const begin = 2.4 + i * 0.55;
-                  return (
-                    <circle key={`dot-${i}`} r="2.4" fill="#B8C26B">
-                      <animateMotion
-                        dur={`${dur}s`}
-                        repeatCount="indefinite"
-                        begin={`${begin}s`}
-                        rotate="auto"
-                      >
-                        <mpath href={`#sd-edge-${i}`} />
-                      </animateMotion>
-                      <animate
-                        attributeName="opacity"
-                        values="0;1;1;0"
-                        keyTimes="0;0.08;0.92;1"
-                        dur={`${dur}s`}
-                        repeatCount="indefinite"
-                        begin={`${begin}s`}
-                      />
-                    </circle>
-                  );
-                })}
-              </svg>
             </div>
 
             <motion.div

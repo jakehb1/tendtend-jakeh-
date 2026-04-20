@@ -27,9 +27,9 @@ export default function FinalCTA() {
           Install an operator that actually runs your business.
         </h2>
         <p className={styles.sub}>
-          Thirty days from now, your agents will know your workflows better
-          than your first hire ever will. We handle the ontology, the wiring,
-          and the on-the-ground tuning.
+          Your agents will know your workflows better than your first hire
+          ever will. We handle the ontology, the wiring, and the on-the-ground
+          tuning.
         </p>
 
         <div className={styles.actions}>
