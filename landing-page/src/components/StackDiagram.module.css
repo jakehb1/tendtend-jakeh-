@@ -4,15 +4,15 @@
 }
 
 .inner {
-  max-width: 1200px;
+  max-width: 820px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 24px;
 }
 
 .frame {
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 4px;
-  padding: 40px;
+  padding: 28px;
   background: #000;
 }
 
@@ -24,8 +24,8 @@
 
 .topCard {
   border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 32px 36px 40px;
-  min-height: 240px;
+  padding: 22px 24px 28px;
+  min-height: 180px;
   background: #050504;
 }
 
@@ -33,29 +33,29 @@
 
 .cardLabel {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--signal-white);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .cardSub {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.38);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .cardBody {
   font-family: var(--font);
   font-weight: 300;
-  font-size: 15.5px;
-  line-height: 1.65;
+  font-size: 13.5px;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.52);
   margin: 0;
   max-width: 40ch;
@@ -99,8 +99,8 @@
 
 .ontology {
   border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 32px 36px 28px;
-  min-height: 320px;
+  padding: 22px 24px 20px;
+  min-height: 260px;
   background: #050504;
   position: relative;
   display: flex;
@@ -109,14 +109,16 @@
 
 .graph {
   position: relative;
-  margin-top: 8px;
-  min-height: 160px;
+  margin-top: 6px;
+  min-height: 170px;
+  padding-bottom: 4px;
 }
 
 .pills {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 8px;
   position: relative;
   z-index: 2;
 }
@@ -124,10 +126,10 @@
 .pill {
   position: relative;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.78);
-  padding: 10px 16px;
+  padding: 8px 12px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.015);
@@ -153,9 +155,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 48px;
+  top: 40px;
   width: 100%;
-  height: 120px;
+  height: 170px;
   pointer-events: none;
   overflow: visible;
   z-index: 1;
@@ -163,12 +165,12 @@
 
 .caption {
   margin-top: auto;
-  padding-top: 32px;
+  padding-top: 22px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.06em;
   color: rgba(255, 255, 255, 0.46);
 }
