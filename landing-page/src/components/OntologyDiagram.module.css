@@ -74,15 +74,15 @@
   left: 30%;
   top: 42%;
   width: 40%;
-  background: var(--accent-slate);
-  border-color: rgba(0, 0, 0, 0.25);
+  background: #6B7A33;
+  border-color: rgba(255, 255, 255, 0.1);
   padding: 18px 22px;
   text-align: center;
   align-items: center;
 }
 
 .kindOnto {
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .titleOnto {
@@ -90,14 +90,14 @@
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.015em;
-  color: #0B0B0A;
+  color: var(--signal-white);
 }
 
 .subOnto {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.05em;
-  color: rgba(0, 0, 0, 0.62);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 720px) {
