@@ -5,7 +5,7 @@
   right: 0;
   z-index: 100;
   padding: 12px 24px;
-  background: rgba(244, 245, 246, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
@@ -13,8 +13,8 @@
 }
 
 .nav[data-scrolled='true'] {
-  background: rgba(244, 245, 246, 0.92);
-  border-bottom-color: rgba(0, 0, 0, 0.06);
+  background: rgba(0, 0, 0, 0.82);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
 }
 
 .inner {
@@ -62,8 +62,8 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: var(--void-black);
-  color: var(--signal-white);
+  background: var(--signal-white);
+  color: #000;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -72,7 +72,7 @@
 }
 
 .cta:hover {
-  background: #1a1a1a;
+  background: #f0f0ec;
   transform: translateY(-1px);
 }
 
@@ -110,11 +110,11 @@
   top: calc(100% + 6px);
   left: 14px;
   right: 14px;
-  background: var(--signal-white);
+  background: #0B0B0A;
   border-radius: var(--radius-lg);
   border: var(--hairline);
   padding: 8px 14px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
 }
 
 .mobileMenu a {
@@ -132,8 +132,8 @@
   display: block;
   margin: 12px 0 4px;
   padding: 12px;
-  background: var(--void-black);
-  color: var(--signal-white) !important;
+  background: var(--signal-white);
+  color: #000 !important;
   text-align: center;
   border-radius: 999px;
   font-weight: 500;

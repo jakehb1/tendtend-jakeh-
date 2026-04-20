@@ -5,6 +5,7 @@ import OntologyDiagram from './components/OntologyDiagram';
 import ActivityFeed from './components/ActivityFeed';
 import Trust from './components/Trust';
 import Layers from './components/Layers';
+import StackDiagram from './components/StackDiagram';
 import Process from './components/Process';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
@@ -21,6 +22,7 @@ export default function App() {
         <ActivityFeed />
         <Trust />
         <Layers />
+        <StackDiagram />
         <Process />
         <FAQ />
         <FinalCTA />

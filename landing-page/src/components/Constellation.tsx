@@ -70,7 +70,7 @@ export default function Constellation() {
             height="20"
             patternUnits="userSpaceOnUse"
           >
-            <circle cx="10" cy="10" r="0.9" fill="rgba(42, 42, 36, 0.18)" />
+            <circle cx="10" cy="10" r="0.9" fill="rgba(255, 255, 255, 0.08)" />
           </pattern>
           <radialGradient id="grid-fade" cx="50%" cy="50%" r="55%">
             <stop offset="0%" stopColor="#000" stopOpacity="1" />
@@ -101,7 +101,7 @@ export default function Constellation() {
               y1={a.y}
               x2={b.x}
               y2={b.y}
-              stroke="rgba(42, 42, 36, 0.28)"
+              stroke="rgba(255, 255, 255, 0.22)"
               strokeWidth="1"
               strokeLinecap="round"
               initial={{ pathLength: 0, opacity: 0 }}
@@ -124,7 +124,7 @@ export default function Constellation() {
                   cy={n.y}
                   r={11}
                   fill="none"
-                  stroke="rgba(42, 42, 36, 0.35)"
+                  stroke="rgba(184, 194, 107, 0.45)"
                   strokeWidth="1"
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -141,7 +141,7 @@ export default function Constellation() {
                   cy={n.y}
                   r={11}
                   fill="none"
-                  stroke="rgba(42, 42, 36, 0.5)"
+                  stroke="rgba(184, 194, 107, 0.55)"
                   strokeWidth="1"
                   initial={{ scale: 1, opacity: 0 }}
                   animate={{ scale: [1, 1.9], opacity: [0.5, 0] }}
@@ -159,7 +159,7 @@ export default function Constellation() {
               cx={n.x}
               cy={n.y}
               r={n.ring ? 4 : 2.5}
-              fill="#2A2A24"
+              fill="#F2F2EF"
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{

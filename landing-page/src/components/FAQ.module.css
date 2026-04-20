@@ -31,7 +31,7 @@
   transition: color 0.15s ease;
 }
 
-.q:hover { color: #000; }
+.q:hover { color: var(--signal-white); }
 
 .plus {
   font-family: var(--font-mono);

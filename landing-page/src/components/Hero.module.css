@@ -22,7 +22,7 @@
   letter-spacing: -0.035em;
   line-height: 1.02;
   font-size: clamp(2.125rem, 5.4vw, 4rem);
-  color: var(--void-black);
+  color: var(--fg);
   margin: 28px 0 28px;
   text-wrap: balance;
 }
